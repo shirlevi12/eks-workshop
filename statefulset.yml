@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: StatefulSet
 metadata:
   name: mariadb
-  namespace: ingress-nginx
+  namespace: shir
 spec:
   serviceName: mariadb
   replicas: 1
@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: mariadb
-          image: mariadb:10.6.4
+          image: 992382545251.dkr.ecr.us-east-1.amazonaws.com/shir/k8s:mariadb
           args:
             - '--default-authentication-plugin=mysql_native_password'
           env:

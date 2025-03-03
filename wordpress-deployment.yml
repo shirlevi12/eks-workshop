@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wordpress
-  namespace: ingress-nginx
+  namespace: shir
 spec:
   replicas: 1
   selector:
@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: wordpress
-          image: wordpress:latest
+          image: 992382545251.dkr.ecr.us-east-1.amazonaws.com/shir/k8s:wordpress
           ports:
             - containerPort: 80
           env:

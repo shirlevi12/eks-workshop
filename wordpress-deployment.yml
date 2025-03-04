@@ -20,10 +20,31 @@ spec:
             - containerPort: 80
           env:
             - name: WORDPRESS_DB_HOST
-              value: "mariadb"
+              value: mariadb
             - name: WORDPRESS_DB_USER
-              value: "wordpress"
+              value: wordpress
             - name: WORDPRESS_DB_PASSWORD
-              value: "wordpress"
+              value: wordpress
             - name: WORDPRESS_DB_NAME
-              value: "wordpress"
+              value: wordpress
+          volumeMounts:
+            - name: wordpress-data
+              mountPath: /var/www/html
+      volumes:
+        - name: wordpress-data
+          persistentVolumeClaim:
+            claimName: wordpress-pvc  
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: wordpress-pvc
+  namespace: shir
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
+  storageClassName: ebs-sc-shir
+

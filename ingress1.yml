@@ -11,7 +11,7 @@ metadata:
 spec:
   ingressClassName: nginx-shir
   rules:
-  - host: aee750e7560244a86894ef72f4630b41-1834286964.us-east-1.elb.amazonaws.com
+  - host: a3f88ab77fb3f42489e27799b4e3b9b7-1188049417.us-east-1.elb.amazonaws.com
     http:
       paths:
       - path: /(grafana|login)(/|$)(.*)

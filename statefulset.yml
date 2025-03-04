@@ -31,17 +31,17 @@ spec:
           ports:
             - containerPort: 3306
           volumeMounts:
-            - name: mariadb-data  # השם של ה-volumeMount
+            - name: mariadb-data-shir 
               mountPath: /var/lib/mysql
       volumes:
-        - name: mariadb-data  # עדכן את שם ה-volume כך שיהיה תואם לשם ב-volumeMount
+        - name: mariadb-data-shir
           persistentVolumeClaim:
-            claimName: mariadb-pvc
+            claimName: mariadb-pvc-shir
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: mariadb-pvc
+  name: mariadb-pvc-shir
   namespace: shir
 spec:
   accessModes:
@@ -49,5 +49,5 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: ebs-sc-shir
+  storageClassName: ebs-sc-nitzanim
 

@@ -28,23 +28,23 @@ spec:
             - name: WORDPRESS_DB_NAME
               value: wordpress
           volumeMounts:
-            - name: wordpress-data
+            - name: wordpress-data-shir
               mountPath: /var/www/html
       volumes:
-        - name: wordpress-data
+        - name: wordpress-data-shir
           persistentVolumeClaim:
-            claimName: wordpress-pvc  
+            claimName: wordpress-pvc-shir  
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
-  name: wordpress-pvc
+  name: wordpress-pvc-shir
   namespace: shir
 spec:
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 1Gi
-  storageClassName: ebs-sc-shir
+      storage: 5Gi
+  storageClassName: ebs-sc-nitzanim
 

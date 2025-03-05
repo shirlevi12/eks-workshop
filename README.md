@@ -9,8 +9,8 @@ This repository contains Kubernetes configuration files to deploy a WordPress ap
 - **kubectl**: Command line tool for interacting with the Kubernetes cluster.
 - **AWS CLI**: Configured with necessary permissions to interact with AWS services.
 - **Helm**: A tool used for managing Kubernetes applications (optional).
-- **Nginx Ingress Controller
-  
+- **Nginx* Ingress Controller
+- **Docker**
 
 ## Key Components
 
